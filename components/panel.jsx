@@ -1,12 +1,12 @@
-const Store = ({ name, infos }) => (
+const Store = ({ item }) => (
   <section>
-    <h4>{name}</h4>
-    {infos.map((info, index) => (
+    <h4>{item.store.name}</h4>
+    {item.cards.map((card, index) => (
       <main key={index}>
-        <span>{info.card.name}</span>
-        <span>{info.price}</span>
-        <span>{info.quantity}</span>
-        <span>{info.language}</span>
+        <span>{card.name}</span>
+        <span>{card.price}</span>
+        <span>{card.quantity}</span>
+        <span>{card.language}</span>
       </main>
     ))}
   </section>
@@ -17,11 +17,10 @@ const Panel = ({ result }) => !result ? null : (
     <h1>Resultados</h1>
     <h3>Custo estimado: {result.estimatedCost}</h3>
     <div>
-      {Object.entries(result.stores).map(([name, infos]) => (
+      {result.stores.map((item, index) => (
         <Store
-          key={name}
-          name={name}
-          infos={infos}
+          key={index}
+          item={item}
         />
       ))}
     </div>

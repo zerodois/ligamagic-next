@@ -1,5 +1,5 @@
 import 'isomorphic-fetch';
-const API_URL = 'http://localhost:45143';
+const API_URL = 'http://localhost:3000';
 const request = {};
 
 const getRequestData = (method, data) => {
