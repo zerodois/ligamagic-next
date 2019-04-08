@@ -5,7 +5,7 @@ import { best } from '../services/search';
 import { to } from '../utils';
 
 import Header from '../components/header';
-import Input from '../components/Input/Input';
+import Form from '../components/Form/Form';
 import Panel from '../components/panel';
 
 import '../sass/main.scss';
@@ -21,20 +21,14 @@ const search = async (textList, setter) => {
 };
 
 const Index = () => {
-  const [list, setList] = useState('');
   const [result, setResult] = useState(null);
   return (
     <main className="board">
       <Header />
       <section className="flex">
         <div className="flex flex-1 flex-column">
-          <div>
-            <button onClick={_ => search(list, setResult)}>
-              Calcular menor preço
-            </button>
-          </div>
-          <Input
-            onChange={setList}
+          <Form
+            onSubmit={config => search(config, setResult)}
           />
         </div>
         <div className="flex-1">

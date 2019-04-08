@@ -1,6 +1,6 @@
-import './Input.scss';
+import './Text.scss';
 
-const Input = ({ onChange }) => {
+const Text = ({ onChange }) => {
   return (
     <div className="input flex flex-1">
       <textarea
@@ -12,4 +12,4 @@ const Input = ({ onChange }) => {
   );
 }
 
-export default Input;
+export default Text;
