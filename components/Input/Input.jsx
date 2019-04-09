@@ -9,6 +9,7 @@ const Input = (props) => {
     ...rest
   } = props;
   const [focus, setFocus] = useState(false);
+  const [text, setText] = useState('');
   const modifiers = [
     'box flex flex-1',
     focus ? 'box--active' : null,
@@ -20,7 +21,8 @@ const Input = (props) => {
       <div className="box__container flex flex-1">
         <input
           onFocus={_ => setFocus(true)}
-          onBlur={_ => setFocus(false)}
+          onBlur={_ => setFocus(!!text)}
+          onChange={setText}
           className="box__container__input flex-1"
           name="input"
           type={type}
