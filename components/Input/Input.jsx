@@ -16,8 +16,8 @@ const Input = (props) => {
   ];
   return (
     <div className={modifiers.join(' ')}>
+      <label className="box__container__placeholder" htmlFor="input">{placeholder}</label>
       <div className="box__container flex flex-1">
-        <label className="box__container__placeholder" htmlFor="input">{placeholder}</label>
         <input
           onFocus={_ => setFocus(true)}
           onBlur={_ => setFocus(false)}

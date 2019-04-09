@@ -3,7 +3,9 @@ $types: 'primary', 'danger';
 .box {
   --radius: 4px;
   --padding: 12px 16px 14px;
+  --placeholder: 8px;
   --font: 1rem;
+  --font-active: 12px;
   --inactive: rgba(0, 0, 0, .8);
 
   @each $type in $types {
@@ -13,13 +15,15 @@ $types: 'primary', 'danger';
   }
 }
 
+$transition: .2s ease-in-out;
+
 .box {
   border: 2px solid transparent;
   border-radius: var(--radius);
   padding: var(--padding);
   position: relative;
   &, &::before {
-    transition: border-color .2s ease-in-out;
+    transition: border-color $transition;
   }
   &::before {
     content: '';
@@ -37,13 +41,24 @@ $types: 'primary', 'danger';
     &::before {
       border-color: transparent;
     }
+    .box__container {
+      &__placeholder {
+        color: var(--color);
+        font-size: var(--font-active);
+        top: 0;
+        background-color: white;
+        transform: translateY(-60%);
+      }
+    }
   }
   &__container {
     position: relative;
     &__placeholder {
       position: absolute;
-      left: 0;
+      padding: 0 .5rem;
+      left: var(--placeholder);
       color: var(--inactive);
+      transition: all $transition;
     }
     &__input {
       z-index: 1;
