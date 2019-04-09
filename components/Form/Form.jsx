@@ -9,8 +9,8 @@ const Form = ({ onSubmit }) => {
     <div className="form">
       <button onClick={_ => onSubmit(text)}>Estimar preço</button>
       <div className="flex row">
-        <Input placeholder="Lojas Banidas"/>
-        <Input placeholder="Lojas com frete gratuito"/>
+        <Input bottom='separadas por ;' placeholder="Lojas Banidas"/>
+        <Input bottom='separadas por ;' placeholder="Lojas com frete gratuito"/>
       </div>
       <Text
         onChange={setText}

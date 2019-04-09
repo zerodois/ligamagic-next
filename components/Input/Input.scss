@@ -1,6 +1,6 @@
 $types: 'primary', 'danger';
 
-.box {
+.input-box {
   --radius: 4px;
   --padding: 12px 16px 14px;
   --placeholder: 8px;
@@ -67,5 +67,14 @@ $transition: .2s ease-in-out;
       border: none;
       outline: none;
     }
+  }
+  & + small {
+    transition: opacity $transition;
+    margin-left: .5rem;
+    color: var(--color);
+    opacity: 0;
+  }
+  &--active + small {
+    opacity: 1;
   }
 }
