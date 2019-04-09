@@ -25,6 +25,7 @@ const Input = (props) => {
   const modifiers = [
     'box flex flex-1',
     active ? 'box--active' : null,
+    focus ? 'box--focus' : null,
   ];
   const onUpdate = (e) => {
     const text = e.target.value;

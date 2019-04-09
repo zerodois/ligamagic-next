@@ -10,8 +10,8 @@ import Panel from '../components/panel';
 
 import '../sass/main.scss';
 
-const search = async (textList, setter) => {
-  const [err, response] = await to(best(textList));
+const search = async (form, setter) => {
+  const [err, response] = await to(best(form));
   if (err) {
     alert('Erro ao buscar na api');
     console.error(err)

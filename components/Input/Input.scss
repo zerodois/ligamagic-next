@@ -36,7 +36,7 @@ $transition: .2s ease-in-out;
     border: thin solid #ccc;
     border-radius: var(--radius);
   }
-  &--active {
+  &--focus {
     border-color: var(--color);
     &::before {
       border-color: transparent;
@@ -44,6 +44,12 @@ $transition: .2s ease-in-out;
     .box__container {
       &__placeholder {
         color: var(--color);
+      }
+    }
+  }
+  &--active {
+    .box__container {
+      &__placeholder {
         font-size: var(--font-active);
         top: 0;
         background-color: white;
