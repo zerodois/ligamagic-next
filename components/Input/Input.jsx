@@ -29,7 +29,6 @@ const Input = (props) => {
   const onUpdate = (e) => {
     const text = e.target.value;
     setText(text);
-    console.log(text);
     if (!onChange) {
       return;
     }
