@@ -1,0 +1,21 @@
+$types: 'primary', 'danger';
+
+.badge {
+  background: var(--color, #eee);
+  color: var(--font, #333);
+  display: inline-block;
+  padding: .25rem 1rem .5rem;
+  border-radius: 2rem;
+  margin-bottom: .25rem;
+  font-weight: bold;
+  &:not(:last-child) {
+    margin-right: .25rem;
+  }
+
+  @each $type in $types {
+    &--#{$type} {
+      --color: var(--#{$type});
+      --font: white;
+    }
+  }
+}

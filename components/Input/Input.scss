@@ -53,6 +53,7 @@ $transition: .2s ease-in-out;
   }
   &__container {
     position: relative;
+    flex-wrap: wrap;
     &__placeholder {
       position: absolute;
       padding: 0 .5rem;
@@ -73,8 +74,8 @@ $transition: .2s ease-in-out;
     margin-left: .5rem;
     color: var(--color);
     opacity: 0;
-  }
-  &--active + small {
-    opacity: 1;
+    &.active {
+      opacity: 1;
+    }
   }
 }
