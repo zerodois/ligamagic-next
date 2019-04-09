@@ -1,0 +1,56 @@
+$types: 'primary', 'danger';
+
+.box {
+  --radius: 4px;
+  --padding: 12px 16px 14px;
+  --font: 1rem;
+  --inactive: rgba(0, 0, 0, .8);
+
+  @each $type in $types {
+    &--#{$type} {
+      --color: var(--#{$type});
+    }
+  }
+}
+
+.box {
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  padding: var(--padding);
+  position: relative;
+  &, &::before {
+    transition: border-color .2s ease-in-out;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+    border: thin solid #ccc;
+    border-radius: var(--radius);
+  }
+  &--active {
+    border-color: var(--color);
+    &::before {
+      border-color: transparent;
+    }
+  }
+  &__container {
+    position: relative;
+    &__placeholder {
+      position: absolute;
+      left: 0;
+      color: var(--inactive);
+    }
+    &__input {
+      z-index: 1;
+      font-size: var(--font);
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  }
+}

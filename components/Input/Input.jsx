@@ -1,9 +1,33 @@
-const Input = ({ type = 'text', ...rest }) => {
+import { useState } from 'react';
+import './Input.scss';
+
+const Input = (props) => {
+  const {
+    type = 'text',
+    placeholder = '',
+    state = 'primary',
+    ...rest
+  } = props;
+  const [focus, setFocus] = useState(false);
+  const modifiers = [
+    'box flex flex-1',
+    focus ? 'box--active' : null,
+    `box--${state}`
+  ];
   return (
-    <input
-      type={type}
-      {...rest}
-    />
+    <div className={modifiers.join(' ')}>
+      <div className="box__container flex flex-1">
+        <label className="box__container__placeholder" htmlFor="input">{placeholder}</label>
+        <input
+          onFocus={_ => setFocus(true)}
+          onBlur={_ => setFocus(false)}
+          className="box__container__input flex-1"
+          name="input"
+          type={type}
+          {...rest}
+        />
+      </div>
+    </div>
   );
 };
 
