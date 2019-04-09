@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Text from '../Text/Text';
 import Input from '../Input/Input';
 import './Form.scss';
 
@@ -12,7 +11,10 @@ const Form = ({ onSubmit }) => {
         <Input bottom='separadas por ;' placeholder="Lojas Banidas"/>
         <Input bottom='separadas por ;' placeholder="Lojas com frete gratuito"/>
       </div>
-      <Text
+      <Input
+        className="text-area"
+        type="textarea"
+        placeholder="Lista de cartas"
         onChange={setText}
       />
     </div>

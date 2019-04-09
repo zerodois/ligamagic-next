@@ -12,7 +12,9 @@ const Factory = ({ type = 'text', ...props }) => (
 const Input = (props) => {
   const {
     bottom,
+    onChange,
     type = 'text',
+    className = '',
     placeholder = '',
     state = 'primary',
     ...rest
@@ -24,6 +26,15 @@ const Input = (props) => {
     'box flex flex-1',
     active ? 'box--active' : null,
   ];
+  const onUpdate = (e) => {
+    const text = e.target.value;
+    setText(text);
+    console.log(text);
+    if (!onChange) {
+      return;
+    }
+    onChange(text);
+  }
   return (
     <div className={`flex flex-column flex-1 input-box input-box--${state}`}>
       <div className={modifiers.join(' ')}>
@@ -32,8 +43,8 @@ const Input = (props) => {
           <Factory
             onFocus={_ => setFocus(true)}
             onBlur={_ => setFocus(false)}
-            onChange={setText}
-            className="box__container__input flex-1"
+            onChange={onUpdate}
+            className={`box__container__input flex-1 ${className}`}
             name="input"
             type={type}
             {...rest}

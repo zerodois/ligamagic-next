@@ -3,4 +3,7 @@
   .row > *:not(:last-child) {
     margin-right: .5rem;
   }
+  .text-area {
+    min-height: 50vh;
+  }
 }
