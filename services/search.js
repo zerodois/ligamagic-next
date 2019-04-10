@@ -7,7 +7,9 @@ export const best = async (form) => {
     .split('\n');
   const options = {
     'free-shipping': form.free.split(';'),
-    'excludes': form.ban.split(';')
+  };
+  const filters = {
+    excludes: form.ban.split(';').filter(item => item)
   };
   const error = lines.some(line => !/^\d{1,2}\s.+$/.test(line));
   if (error) {
@@ -17,6 +19,6 @@ export const best = async (form) => {
     const [, number, name] = /^(\d{1,2})\s(.+)$/.exec(line);
     return { quantity: Number(number), name };
   });
-  return api.post('/best', { cards, options })
+  return api.post('/best', { cards, options, filters })
     .then(json => cleanJson(json, 1));
 };
