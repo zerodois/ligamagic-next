@@ -1,0 +1,18 @@
+.panel {
+  max-width: 45vw;
+}
+
+.store {
+  &__header {
+    align-items: center;
+    &__logo {
+      width: 9vw;
+      height: 3vw;
+      margin-right: .5rem;
+      object-fit: cover;
+    }
+  }
+  .grid {
+    grid-gap: .5rem;
+  }
+}

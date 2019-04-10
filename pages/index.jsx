@@ -6,7 +6,7 @@ import { to } from '../utils';
 
 import Header from '../components/header';
 import Form from '../components/Form/Form';
-import Panel from '../components/panel';
+import Panel from '../components/Panel/Panel';
 import mock from '../mock';
 
 import '../sass/main.scss';

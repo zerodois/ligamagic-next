@@ -17,6 +17,16 @@ html, body {
 .pointer {
   cursor: pointer;
 }
+
+.grid {
+  display: grid;
+  @for $i from 1 to 10 {
+    &-#{$i} {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+}
+
 .flex {
   display: flex;
   &-column {
