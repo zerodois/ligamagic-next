@@ -7,6 +7,7 @@ import { to } from '../utils';
 import Header from '../components/header';
 import Form from '../components/Form/Form';
 import Panel from '../components/panel';
+import mock from '../mock';
 
 import '../sass/main.scss';
 
@@ -17,11 +18,12 @@ const search = async (form, setter) => {
     console.error(err)
     return;
   }
+  console.log(JSON.stringify(response, null, 2));
   setter(response);
 };
 
 const Index = () => {
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState(mock);
   return (
     <main className="board">
       <Header />
