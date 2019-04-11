@@ -1,5 +1,7 @@
 .form {
-  padding: 0 1rem;
+  > *:not(:last-child) {
+    margin-right: 1rem;
+  }
   .row > *:not(:last-child) {
     margin-right: .5rem;
   }

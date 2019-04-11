@@ -18,7 +18,6 @@ const search = async (form, setter) => {
     console.error(err)
     return;
   }
-  console.log(JSON.stringify(response, null, 2));
   setter(response);
 };
 
@@ -28,17 +27,15 @@ const Index = () => {
     <main className="board">
       <Header />
       <section className="flex">
-        <div className="flex flex-1 flex-column">
+        <div className="flex-1">
           <Form
             onSubmit={config => search(config, setResult)}
           />
         </div>
-        <div className="flex-1">
-          <Panel
-            result={result}
-          />
-        </div>
       </section>
+      <Panel
+        result={result}
+      />
     </main>
   );
 }

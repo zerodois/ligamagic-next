@@ -19,6 +19,8 @@ export const best = async (form) => {
     const [, number, name] = /^(\d{1,2})\s(.+)$/.exec(line);
     return { quantity: Number(number), name };
   });
-  return api.post('/best', { cards, options, filters })
+  const request = { cards, options, filters };
+  console.log('Request:', request);
+  return api.post('/best', request)
     .then(json => cleanJson(json, 1));
 };

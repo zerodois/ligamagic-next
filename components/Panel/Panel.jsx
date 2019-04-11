@@ -7,7 +7,7 @@ const Store = ({ item }) => (
       <img className="store__header__logo" src={`https:${item.store.image}`} alt={`logo ${item.store.name}`}/>
       <h1 className="store__header__title">{item.store.name}</h1>
     </header>
-    <div className="grid grid-3">
+    <div className="grid grid-7">
       {item.cards.map((card, index) => (
         <Card
           key={index}

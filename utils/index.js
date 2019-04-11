@@ -1,4 +1,20 @@
 /**
+ * Build buy url by offer id
+ * @param {number} offer offer id of card
+ * @returns {string}
+ */
+export const buyUrl = (offer) => `https://www.ligamagic.com.br/b/?p=e${offer}`;
+
+/**
+ * Format number to BRL price
+ * @param {number} price
+ * @returns {string}
+ */
+export const formatPrice = (price) => parseFloat(price)
+  .toFixed(2)
+  .replace('.', ',');
+
+/**
  * Promise wrapper to async/await use
  * @param {<Promise>} promise
  * @returns {<Promise>}
