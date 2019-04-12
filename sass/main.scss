@@ -25,7 +25,9 @@ html, body {
 }
 
 .row {
-  padding-top: .5rem;
+  &:not(:first-child) {
+    padding-top: .5rem;
+  }
   padding-bottom: .5rem;
 }
 .pointer {
@@ -60,7 +62,7 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
   flex: 1;
-  padding: 0 1rem 1rem;
+  padding: 0 5vw 1rem;
 }
 
 .button {
@@ -70,8 +72,12 @@ html, body {
   padding: .5rem 1rem;
   border-radius: 4px;
   font-weight: bold;
+  flex: 1;
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
+  &--full {
+    width: 100%;
+  }
   @each $type in $types {
     &--#{$type} {
       --color: var(--#{$type});

@@ -51,9 +51,6 @@ const Input = (props) => {
           />
         </div>
       </div>
-      {!bottom ? null : (
-        <small className={focus ? 'active' : null}>{bottom}</small>
-      )}
     </div>
   );
 };

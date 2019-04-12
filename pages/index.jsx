@@ -32,10 +32,10 @@ const Index = () => {
             onSubmit={config => search(config, setResult)}
           />
         </div>
+        <Panel
+          result={result}
+        />
       </section>
-      <Panel
-        result={result}
-      />
     </main>
   );
 }
