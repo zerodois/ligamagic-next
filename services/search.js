@@ -6,7 +6,7 @@ export const best = async (form) => {
     .trim('')
     .split('\n');
   const options = {
-    'free-shipping': form.free.split(';'),
+    'free-shipping': form.free.split(';').map(item => item.trim()).filter(item => item),
   };
   const filters = {
     excludes: form.ban.split(';').filter(item => item)
