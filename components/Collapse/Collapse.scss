@@ -1,0 +1,8 @@
+.collapse {
+  overflow: hidden;
+  transition: max-height .5s linear;
+  max-height: 100vh;
+  &--hidden {
+    max-height: 0;
+  }
+}

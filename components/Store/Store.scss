@@ -3,11 +3,23 @@
   padding: 2rem;
   box-shadow: 0 0 20px -2px #ddd;
   border-radius: 5px;
+  $trans: .25s linear;
+  .collapse--button {
+    margin-top: .5rem;
+    transition: transform $trans;
+    &--expanded {
+      transform: rotateZ(-180deg);
+    }
+  }
+  .grid {
+    margin-top: 1.5rem;
+    grid-gap: .25rem;
+  }
   &:not(:first-child) {
     margin-top: 1rem;
   }
   &:hover {
-    transition: transform .25s linear;
+    transition: transform $trans;
     transform: scale(1.025);
   }
   &__item {
