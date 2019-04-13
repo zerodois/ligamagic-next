@@ -33,6 +33,7 @@ const Store = ({ item }) => {
           <i
             onClick={_ => setExpanded(!expanded)}
             className={[
+              'no-select',
               'collapse--button',
               'text--primary',
               'material-icons pointer',

@@ -1,4 +1,16 @@
 /**
+ * All card status
+ */
+export const status = [
+  { id: 'M', name: 'Mint' },
+  { id: 'NM', name: 'Near Mint' },
+  { id: 'SP', name: 'Slightly Played' },
+  { id: 'MP', name: 'Moderately Playerd' },
+  { id: 'HP', name: 'Heavily Played' },
+  { id: 'D', name: 'Damaged' },
+];
+
+/**
  * Build buy url by offer id
  * @param {number} offer offer id of card
  * @returns {string}

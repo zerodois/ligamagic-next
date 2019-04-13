@@ -2,4 +2,42 @@
   margin-left: 2rem;
   max-width: 42vw;
   padding-bottom: 2rem;
+  &__result {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    &__price {
+      background-color: white;
+      margin-bottom: 1rem;
+      border-radius: 200px;
+      box-shadow: 0 0 10px 0 var(--shadow);
+      padding: .5rem 0;
+      &__description {
+        border-right: thin solid #eee;
+        padding: .5rem .5rem .5rem 1.5rem;
+        margin-right: .5rem;
+        i {
+          margin-right: .5rem;
+        }
+      }
+    }
+    &__filter {
+      margin-top: .5rem;
+    }
+  }
+}
+
+.status {
+  background-color: white;
+  padding: .5rem 1.5rem;
+  border-radius: 100px;
+  border: thin solid #e0e0e0;
+  // box-shadow: 0 0 10px -1px var(--shadow);
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+  &--active {
+    color: var(--primary);
+    border-color: var(--primary);
+    background-color: var(--primary-alpha);
+  }
 }
