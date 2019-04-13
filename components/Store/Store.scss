@@ -1,0 +1,39 @@
+.store {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 0 20px -2px #ddd;
+  border-radius: 5px;
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+  &:hover {
+    transition: transform .25s linear;
+    transform: scale(1.025);
+  }
+  &__item {
+    &__left {
+      margin-right: 1rem;
+      img {
+        $size: 4vw;
+        height: $size;
+        width: $size;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+    &__main {
+      &__title {
+        margin-bottom: .5rem;
+        font-size: 1.1rem;
+      }
+      &__text {
+        color: #666;
+        display: block;
+        font-size: .95rem;
+      }
+      small {
+        font-size: .85rem;
+      }
+    }
+  }
+}

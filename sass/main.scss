@@ -8,6 +8,7 @@ html, body {
   margin: 0;
   height: 100%;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--neutral);
 }
 .link {
   text-decoration: none;
@@ -32,6 +33,12 @@ html, body {
 }
 .pointer {
   cursor: pointer;
+}
+
+.text {
+  &--primary {
+    color: var(--primary, #333);
+  }
 }
 
 .grid {
@@ -62,7 +69,6 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
   flex: 1;
-  padding: 0 5vw 1rem;
 }
 
 .button {

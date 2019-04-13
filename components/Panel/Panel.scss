@@ -1,18 +1,5 @@
 .panel {
-  margin-left: 1rem;
-}
-
-.store {
-  &__header {
-    align-items: center;
-    &__logo {
-      width: 9vw;
-      height: auto;
-      margin-right: .5rem;
-      object-fit: cover;
-    }
-  }
-  .grid {
-    grid-gap: .5rem;
-  }
+  margin-left: 2rem;
+  max-width: 42vw;
+  padding-bottom: 2rem;
 }

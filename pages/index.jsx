@@ -25,13 +25,10 @@ const Index = () => {
   const [result, setResult] = useState(mock);
   return (
     <main className="board">
-      <Header />
       <section className="flex">
-        <div className="flex-1">
-          <Form
-            onSubmit={config => search(config, setResult)}
-          />
-        </div>
+        <Form
+          onSubmit={config => search(config, setResult)}
+        />
         <Panel
           result={result}
         />
