@@ -4,9 +4,16 @@ import './Panel.scss';
 import Store from '../Store/Store';
 import { formatPrice } from '../../utils'
 
-const Status = ({ id, name, active }) => {
+const Status = (item) => {
+  const {
+    id,
+    name,
+    active,
+    onClick,
+  } = item;
   return (
     <div
+      onClick={_ => onClick ? onClick(item) : null}
       className={[
         "status text--uppercase flex flex-center pointer",
         active ? 'status--active' : '',
@@ -26,6 +33,14 @@ const compose = (items, active = true) => {
   return Object.values(status);
 };
 
+const updateStatus = (status, setStatus) => (item) => {
+  const index = status.findIndex(it => it.id === item.id);
+  const it = status[index];
+  const items = [...status];
+  items[index] = { ...it, active: !it.active };
+  setStatus(items);
+};
+
 const Panel = ({ result }) => {
   if(!result) {
     return null;
@@ -43,7 +58,12 @@ const Panel = ({ result }) => {
     </div>
     <div className="panel__result__filter flex">
     {status.map((item, index) => (
-      <Status key={item.id} {...item} active={item.active} />
+      <Status
+        key={item.id}
+        active={item.active}
+        onClick={updateStatus(status, setStatus)}
+        {...item}
+      />
     ))}
     </div>
     </div>
