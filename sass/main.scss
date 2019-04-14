@@ -51,6 +51,12 @@ html, body {
   &--uppercase {
     text-transform: uppercase;
   }
+  &--left {
+    text-align: left;
+  }
+  &--center {
+    text-align: center;
+  }
 }
 
 .grid {
@@ -94,8 +100,14 @@ html, body {
   flex: 1;
   font-size: 1.01rem;
   font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
   &--full {
     width: 100%;
+  }
+  &--rounded {
+    background-image: linear-gradient(to right, var(--secondary), var(--color));
+    border-radius: 200px;
+    color: var(--font);
   }
   @each $type in $types {
     &--#{$type} {

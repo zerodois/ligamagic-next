@@ -6,7 +6,7 @@ import Card from '../Card/Card';
 
 const calculate = arr => 10 + arr.reduce((prev, curr) => prev + curr.price, 0);
 
-const Store = ({ item }) => {
+const Store = ({ item, onCardClick }) => {
   const [sum, setSum] = useState(calculate(item.cards));
   const [expanded, setExpanded] = useState(false);
   const protocol = item.store.image.charAt(0) === '/'
@@ -48,8 +48,9 @@ const Store = ({ item }) => {
         <div className="grid grid-5">
           {item.cards.map((card, index) => (
             <Card
+              onClick={card => onCardClick({ store: item, card })}
               key={index}
-              image={card.image}
+              card={card}
             />
           ))}
         </div>

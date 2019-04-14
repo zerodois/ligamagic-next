@@ -1,0 +1,16 @@
+.cardview {
+  background-color: white;
+  box-shadow: 0 0 20px -2px var(--shadow);
+  text-align: center;
+  padding: 0 2rem;
+  &__card {
+    max-width: 100%;
+    margin: 2rem 0 0;
+    border-radius: 7px;
+  }
+  &__info {
+    &__price {
+      margin: 1rem 0;
+    }
+  }
+}

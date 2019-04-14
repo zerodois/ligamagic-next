@@ -41,41 +41,42 @@ const updateStatus = (status, setStatus) => (item) => {
   setStatus(items);
 };
 
-const Panel = ({ result }) => {
+const Panel = ({ result, onCardClick }) => {
   if(!result) {
     return null;
   }
   const [status, setStatus] = useState(compose(result.stores));
   return (
-    <div className="panel flex-1">
-    <div className="panel__result">
-    <div className="text--uppercase panel__result__price flex flex-center">
-    <div className="panel__result__price__description flex">
-    <i className="material-icons text--primary">monetization_on</i>
-    <span className="text--primary">Custo estimado</span>
-    </div>
-    <span className="flex-1">R$ {formatPrice(result.estimatedCost)} reais</span>
-    </div>
-    <div className="panel__result__filter flex">
-    {status.map((item, index) => (
-      <Status
-        key={item.id}
-        active={item.active}
-        onClick={updateStatus(status, setStatus)}
-        {...item}
-      />
-    ))}
-    </div>
-    </div>
-    <div>
-    {result.stores.map((item, index) => (
-      <Store
-      key={index}
-      item={item}
-      />
-    ))}
-    </div>
-    {/* <pre>{JSON.stringify(result, null, 2)}</pre> */}
+    <div className="panel">
+      <div className="panel__result">
+        <div className="text--uppercase panel__result__price flex flex-center">
+          <div className="panel__result__price__description flex">
+            <i className="material-icons text--primary">monetization_on</i>
+            <span className="text--primary">Custo estimado</span>
+          </div>
+          <span className="flex-1">R$ {formatPrice(result.estimatedCost)} reais</span>
+        </div>
+        <div className="panel__result__filter flex">
+          {status.map((item, index) => (
+            <Status
+              key={item.id}
+              active={item.active}
+              onClick={updateStatus(status, setStatus)}
+              {...item}
+            />
+          ))}
+        </div>
+      </div>
+      <div>
+        {result.stores.map((item, index) => (
+          <Store
+            onCardClick={onCardClick}
+            key={index}
+            item={item}
+          />
+        ))}
+      </div>
+      {/* <pre>{JSON.stringify(result, null, 2)}</pre> */}
     </div>
   );
 };

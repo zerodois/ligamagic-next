@@ -11,6 +11,18 @@ export const status = [
 ];
 
 /**
+ * Format URL with https://
+ * @param {string} url url to be formatted
+ * @returns {string}
+ */
+export const formatUrl = (url) => {
+  if (url.charAt(0) === '/') {
+    return 'https:' + url;
+  }
+  return url;
+};
+
+/**
  * Build buy url by offer id
  * @param {number} offer offer id of card
  * @returns {string}

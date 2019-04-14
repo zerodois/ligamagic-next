@@ -8,6 +8,7 @@ import { to } from '../utils';
 import Header from '../components/header';
 import Form from '../components/Form/Form';
 import Panel from '../components/Panel/Panel';
+import CardView from '../components/CardView/CardView';
 import mock from '../mock';
 
 import '../sass/main.scss';
@@ -24,18 +25,23 @@ const search = async (form, setter) => {
 
 const Index = () => {
   const [result, setResult] = useState(mock);
+  const [info, setInfo] = useState({ store: mock.stores[0], card: mock.stores[0].cards[0] });
   return (
     <main className="board">
       <Head>
         <title>Ligamagic Next</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       </Head>
-      <section className="flex">
+      <section className="flex flex-1">
         <Form
           onSubmit={config => search(config, setResult)}
         />
         <Panel
+          onCardClick={setInfo}
           result={result}
+        />
+        <CardView
+          info={info}
         />
       </section>
     </main>
