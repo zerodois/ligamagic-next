@@ -69,20 +69,6 @@ html, body {
   }
 }
 
-.flex {
-  display: flex;
-  &-column {
-    flex-direction: column;
-  }
-  &-1 {
-    flex: 1;
-  }
-  &-center {
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 .board {
   display: flex;
   flex-direction: column;
@@ -117,5 +103,19 @@ html, body {
       --color: var(--#{$type});
       --font: white;
     }
+  }
+}
+
+.flex {
+  display: flex;
+  &-column {
+    flex-direction: column;
+  }
+  &-1 {
+    flex: 1;
+  }
+  &-center {
+    justify-content: center;
+    align-items: center;
   }
 }

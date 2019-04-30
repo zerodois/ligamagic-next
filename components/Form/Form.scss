@@ -7,7 +7,7 @@
     margin-right: 1rem;
   }
   .header {
-    padding: 2rem 0;
+    padding: 1rem 0;
     justify-content: flex-start;
     align-items: center;
     &__title {
@@ -28,5 +28,14 @@
   }
   .input-box {
     margin-bottom: 1rem;
+  }
+  .status {
+    max-width: 31vw;
+    > * {
+      margin: 0 .25rem .25rem 0;
+    }
+  }
+  div.submit {
+    text-align: right;
   }
 }

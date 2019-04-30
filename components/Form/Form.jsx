@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Input from '../Input/Input';
 import './Form.scss';
+import Badge from '../Badge/Badge';
+import { status } from '../../utils';
 
 const initialState = {
   list: '',
@@ -8,8 +10,12 @@ const initialState = {
   ban: '',
 };
 
+const states = status
+  .reduce((p, c) => ({ ...p, [c.id]: true }), {});
+
 const Form = ({ onSubmit }) => {
   const [form, setForm] = useState({ ...initialState });
+  const [filter, setFilter] = useState({ ...states });
   return (
     <div className="form flex">
       <div>
@@ -26,12 +32,25 @@ const Form = ({ onSubmit }) => {
         <div style={{ marginTop: '.5rem' }}>
           <Input bottom='separadas por ;' onChange={free => setForm({ ...form, free})} placeholder="Lojas com frete gratuito"/>
         </div>
-        <button
-          className="button button--primary text--bold text--uppercase pointer"
-          onClick={_ => onSubmit(form)}
-        >
-          Estimar preço
-        </button>
+        <div className="flex status" style={{ flexWrap: 'wrap' }}>
+          {status.map(item => (
+            <Badge
+              onClick={id => setFilter({ ...filter, [id]: !filter[id] })}
+              active={filter[item.id]}
+              text={item.id}
+              id={item.id}
+              key={item.id}
+            />
+          ))}
+        </div>
+        <div className="submit">
+          <button
+            className="button button--primary text--bold text--uppercase pointer"
+            onClick={_ => onSubmit(form)}
+          >
+            Estimar preço
+          </button>
+        </div>
       </div>
     </div>
   );
