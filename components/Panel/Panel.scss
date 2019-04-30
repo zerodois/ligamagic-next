@@ -1,7 +1,9 @@
 .panel {
-  margin: 0 2rem;
+  margin: 0;
   max-width: 42vw;
-  padding-bottom: 2rem;
+  padding: 0 2rem 2rem;
+  overflow: auto;
+  max-height: 100vh;
   &__result {
     padding-top: 1rem;
     padding-bottom: 2rem;

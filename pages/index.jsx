@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { best } from '../services/search';
 import { to } from '../utils';
 
-import Header from '../components/header';
 import Form from '../components/Form/Form';
 import Panel from '../components/Panel/Panel';
 import CardView from '../components/CardView/CardView';
