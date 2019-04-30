@@ -1,6 +1,6 @@
 import 'isomorphic-fetch';
 import { formatUrl } from '../utils';
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://ligamagic-api.now.sh'; // 'http://localhost:3000';
 const request = {};
 
 const getRequestData = (method, data) => {
