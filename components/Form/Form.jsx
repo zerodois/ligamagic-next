@@ -13,7 +13,7 @@ const Form = ({ onSubmit }) => {
   return (
     <div className="form flex">
       <div>
-        <header className="header flex">
+        <header className="header">
           <img src="/static/liga.svg" alt="logo Ligamagic"/>
           <h1 className="header__title">Ligamagic Next</h1>
         </header>
