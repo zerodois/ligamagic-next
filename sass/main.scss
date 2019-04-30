@@ -92,6 +92,8 @@ html, body {
 
 .button {
   border: 0;
+  display: inline-block;
+  text-decoration: none;
   background: transparent;
   color: var(--color, #333);
   padding: .75rem .25rem;

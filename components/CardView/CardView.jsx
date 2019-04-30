@@ -10,6 +10,7 @@ const CardView = ({ info }) => {
     return (<Empty/>);
   }
   const { store, card } = info;
+  console.log('CARD', card, store)
   return (
     <section className="cardview flex-1">
       <img
@@ -23,11 +24,13 @@ const CardView = ({ info }) => {
         </div>
         <div className="text--primary text--bold cardview__info__price">R$ {formatPrice(card.price)}</div>
         <div style={{ padding: '0 1rem' }}>
-          <button
-          className="button button--full button--primary button--rounded"
+          <a
+            target="__blank"
+            href={`https://www.ligamagic.com.br/b/?p=e${card.offer}`}
+            className="button button--full button--primary button--rounded"
           >
           Comprar
-          </button>
+          </a>
         </div>
       </div>
     </section>
