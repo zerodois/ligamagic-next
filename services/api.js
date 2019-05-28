@@ -1,6 +1,6 @@
 import 'isomorphic-fetch';
 import { formatUrl } from '../utils';
-const API_URL = 'https://ligamagic-api.now.sh'; // 'http://localhost:3000';
+const API_URL = 'http://localhost:8080';
 const request = {};
 
 const getRequestData = (method, data) => {
@@ -15,6 +15,9 @@ const factory = (method) => (url, data) => {
   const reqData = getRequestData(method, data);
   const promise = fetch(`${API_URL}${uri}`, {
     method,
+    headers: {
+      'Content-Type': 'application/json',
+    },
     ...reqData,
   });
   return promise

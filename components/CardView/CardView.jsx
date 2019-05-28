@@ -20,7 +20,7 @@ const CardView = ({ info }) => {
       />
       <div className="cardview__info">
         <div>
-          <small>{card.name}</small>
+          <small><b>{card.quantity}</b> X {card.name}</small>
         </div>
         <div className="text--primary text--bold cardview__info__price">R$ {formatPrice(card.price)}</div>
         <div style={{ padding: '0 1rem' }}>

@@ -4,7 +4,8 @@ import { cleanJson } from '../utils';
 export const best = async (form) => {
   const lines = form.list
     .trim('')
-    .split('\n');
+    .split('\n')
+    .filter(line => line.trim());
   const options = {
     'free-shipping': form.free.split(';').map(item => item.trim()).filter(item => item),
   };
@@ -17,7 +18,7 @@ export const best = async (form) => {
   }
   const cards = lines.map((line) => {
     const [, number, name] = /^(\d{1,2})\s(.+)$/.exec(line);
-    return { quantity: Number(number), name };
+    return { required: Number(number), name };
   });
   const request = { cards, options, filters };
   console.log('Request:', request);

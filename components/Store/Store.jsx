@@ -8,7 +8,7 @@ const calculate = arr => 10 + arr.reduce((prev, curr) => prev + curr.price, 0);
 
 const Store = ({ item, onCardClick }) => {
   const [sum, setSum] = useState(calculate(item.cards));
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const protocol = item.store.image.charAt(0) === '/'
     ? 'https:'
     : '';
