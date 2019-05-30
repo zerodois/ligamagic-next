@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 
 import { best } from '../services/search';
+import { createCart } from '../services/buy';
 import { to } from '../utils';
 
 import Form from '../components/Form/Form';
@@ -22,6 +23,10 @@ const search = async (form, setter) => {
   setter(response);
 };
 
+const createCheckout = (cards) => {
+  createCart(cards);
+};
+
 const Index = () => {
   const [result, setResult] = useState(mock);
   const [info, setInfo] = useState({ store: mock.stores[0], card: mock.stores[0].cards[0] });
@@ -36,6 +41,7 @@ const Index = () => {
           onSubmit={config => search(config, setResult)}
         />
         <Panel
+          onPurchase={createCheckout}
           onCardClick={setInfo}
           result={result}
         />

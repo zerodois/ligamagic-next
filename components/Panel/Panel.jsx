@@ -3,7 +3,7 @@ import './Panel.scss';
 import Store from '../Store/Store';
 import { formatPrice } from '../../utils'
 
-const Panel = ({ result, onCardClick }) => {
+const Panel = ({ result, onCardClick, onPurchase }) => {
   if(!result) {
     return null;
   }
@@ -21,6 +21,7 @@ const Panel = ({ result, onCardClick }) => {
       <div>
         {result.stores.map((item, index) => (
           <Store
+            onPurchase={onPurchase}
             onCardClick={onCardClick}
             key={index}
             item={item}
