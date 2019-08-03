@@ -1,9 +1,13 @@
-function Header() {
+import Head from 'next/head';
+import '../sass/main.scss';
+
+const Header = () => {
   return (
-    <header>
-      <h1>LigaMagic - Next</h1>
-    </header>
+    <Head>
+      <title>Ligamagic Next</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    </Head>
   );
-}
+};
 
 export default Header;

@@ -9,13 +9,10 @@ const Card = (props) => {
     offer,
     image,
   } = card;
-  const url = image.charAt(0) === '/'
-    ? 'https:'
-    : '';
   return (
-    <div className="card pointer" onClick={_ => onClick(card)}>
-      <img className="card__image" src={`${url}${image}`} />
-    </div>
+    <li className="card pointer" onClick={_ => onClick(card)}>
+      <span>{name}</span>
+    </li>
   );
 };
 

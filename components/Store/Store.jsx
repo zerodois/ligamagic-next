@@ -8,11 +8,7 @@ const calculate = arr => 10 + arr.reduce((prev, curr) => prev + curr.price, 0);
 
 const Store = ({ item, onCardClick, onPurchase }) => {
   const [sum, setSum] = useState(calculate(item.cards));
-  const [expanded, setExpanded] = useState(false);
-  const protocol = item.store.image.charAt(0) === '/'
-    ? 'https:'
-    : '';
-  const image = `${protocol}${item.store.image}`;
+  const [expanded, setExpanded] = useState(true);
   useEffect(
     () => setSum(calculate(item.cards)),
     [item.cards]
@@ -20,38 +16,12 @@ const Store = ({ item, onCardClick, onPurchase }) => {
   return (
     <section className="store flex-1">
       <main className="store__item flex flex-1">
-        <div className="store__item__left">
-          <img src={image} alt={`logo ${item.store.name}`}/>
-        </div>
         <div className="store__item__main flex flex-column flex-1">
           <strong className="store__item__main__title">{item.store.name}</strong>
-          <span className="store__item__main__text">Preço estimado R$ ${formatPrice(sum)}</span>
-          <small className="store__item__main__text">{item.cards.length} cartas</small>
-        </div>
-        <div className="store__item__right flex flex-center flex-column">
-          <div
-            onClick={() => onPurchase(item.cards)}
-            style={{ paddingLeft: '1.5rem' }}
-            className="pointer button button--full button--primary button--rounded"
-          >
-            Comprar
-          </div>
-          <i
-            onClick={_ => setExpanded(!expanded)}
-            className={[
-              'no-select',
-              'collapse--button',
-              'text--primary',
-              'material-icons pointer',
-              expanded ? 'collapse--button--expanded' : '',
-            ].join(' ')}
-          >
-            keyboard_arrow_down
-          </i>
         </div>
       </main>
       <Collapse expanded={expanded}>
-        <div className="grid grid-5">
+        <ul className="store-list">
           {item.cards.map((card, index) => (
             <Card
               onClick={card => onCardClick({ store: item, card })}
@@ -59,13 +29,8 @@ const Store = ({ item, onCardClick, onPurchase }) => {
               card={card}
             />
           ))}
-        </div>
+        </ul>
       </Collapse>
-      {/*<header className="store__header flex">
-        <img className="store__header__logo" src={`https:${item.store.image}`} alt={`logo ${item.store.name}`}/>
-        <h1 className="store__header__title">{item.store.name}</h1>
-      </header>
-      */}
     </section>
   );
 };

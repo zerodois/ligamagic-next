@@ -1,8 +1,9 @@
+@import '../../sass/variables';
+
 .store {
-  background-color: white;
   padding: 2rem;
-  box-shadow: 0 0 20px -2px #ddd;
   border-radius: 5px;
+  width: 40vw;
   $trans: .25s linear;
   .collapse--button {
     margin-top: .5rem;
@@ -18,9 +19,8 @@
   &:not(:first-child) {
     margin-top: 1rem;
   }
-  &:hover {
-    transition: transform $trans;
-    transform: scale(1.025);
+  &-list {
+    padding-left: 0;
   }
   &__item {
     &__left {
@@ -38,6 +38,7 @@
         margin-bottom: .5rem;
         font-size: 1.1rem;
         font-weight: 500;
+        color: $font;
       }
       &__text {
         color: #666;
