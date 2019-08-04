@@ -1,9 +1,9 @@
 @import '../../sass/variables';
 
 .store {
-  padding: 2rem;
+  padding: 2rem 2rem 1rem;
   border-radius: 5px;
-  width: 40vw;
+  width: 50vw;
   $trans: .25s linear;
   .collapse--button {
     margin-top: .5rem;
@@ -15,9 +15,6 @@
   .grid {
     margin-top: 1.5rem;
     grid-gap: .25rem;
-  }
-  &:not(:first-child) {
-    margin-top: 1rem;
   }
   &-list {
     padding-left: 0;
@@ -34,11 +31,16 @@
       }
     }
     &__main {
+      border-bottom: thin solid $neutral;
       &__title {
         margin-bottom: .5rem;
         font-size: 1.1rem;
         font-weight: 500;
-        color: $font;
+        margin-right: .5rem;
+        color: $font-secondary;
+        &--main {
+          color: $font;
+        }
       }
       &__text {
         color: #666;

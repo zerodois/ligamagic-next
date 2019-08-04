@@ -1,7 +1,10 @@
+@import '../../sass/variables';
+
 .card {
   list-style: none;
-  padding-left: 0;
-  margin-left: 0;
+  padding: .5rem 0;
+  color: $font;
+  font-size: .9rem;
   &__image {
     max-width: 100%;
     border-radius: 5px;

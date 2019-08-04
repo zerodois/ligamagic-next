@@ -16,8 +16,9 @@ const Store = ({ item, onCardClick, onPurchase }) => {
   return (
     <section className="store flex-1">
       <main className="store__item flex flex-1">
-        <div className="store__item__main flex flex-column flex-1">
-          <strong className="store__item__main__title">{item.store.name}</strong>
+        <div className="store__item__main flex flex-1">
+          <strong className="store__item__main__title store__item__main__title--main">{item.store.name}</strong>
+          <strong className="store__item__main__title">({item.cards.length})</strong>
         </div>
       </main>
       <Collapse expanded={expanded}>
