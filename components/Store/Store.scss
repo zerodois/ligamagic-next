@@ -32,6 +32,10 @@
     }
     &__main {
       border-bottom: thin solid $neutral;
+      .icon--minimized {
+        transition: transform .3s linear;
+        transform: rotateZ(-90deg);
+      }
       &__title {
         margin-bottom: .5rem;
         font-size: 1.1rem;

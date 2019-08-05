@@ -5,16 +5,12 @@
   padding: .5rem 0;
   color: $font;
   font-size: .9rem;
-  &__image {
-    max-width: 100%;
-    border-radius: 5px;
+  > *:not(:first-child) {
+    margin-left: .5rem;
   }
-  &__buy {
-    display: block;
-    margin: .25rem 0;
-  }
-  &__name {
-    display: block;
-    font-size: 11px;
+  &__status {
+    min-width: 2rem;
+    color: $font-secondary;
+    text-align: right;
   }
 }

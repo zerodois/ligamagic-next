@@ -67,13 +67,6 @@ html, body {
   }
 }
 
-.board {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  flex: 1;
-}
-
 .button {
   border: 0;
   display: inline-block;
@@ -101,6 +94,19 @@ html, body {
       --color: var(--#{$type});
       --font: white;
     }
+  }
+}
+
+.table {
+  display: table;
+  &__group {
+    display: table-row-group;
+  }
+  &__row {
+    display: table-row;
+  }
+  &__cell {
+    display: table-cell;
   }
 }
 

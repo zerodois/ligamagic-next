@@ -10,8 +10,10 @@ const Card = (props) => {
     image,
   } = card;
   return (
-    <li className="card pointer" onClick={_ => onClick(card)}>
-      <span>{name}</span>
+    <li className="card flex pointer" onClick={_ => onClick(card)}>
+      <span className="flex-1">{name}</span>
+      <span className="text--bold">R$ {parseFloat(price).toFixed(2).replace('.', ',')}</span>
+      <span className="card__status">{card.status.id}</span>
     </li>
   );
 };
