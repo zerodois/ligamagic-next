@@ -1,3 +1,4 @@
+@import '../../sass/variables';
 $types: 'primary', 'danger';
 
 .input-box {
@@ -37,7 +38,7 @@ $transition: .2s ease-in-out;
     border-radius: var(--radius);
   }
   &--focus {
-    border-color: var(--color);
+    border-color: $font;
     &::before {
       border-color: transparent;
     }

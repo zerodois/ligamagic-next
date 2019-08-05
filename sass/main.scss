@@ -24,6 +24,33 @@ html, body {
     }
   }
 }
+
+.no-resize {
+  resize: none;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(150, 150, 150, .1);
+  outline: none;
+  padding: .75rem 1rem;
+  font-size: .85rem;
+  color: $font;
+  font-family: 'Roboto', sans-serif;
+  &::placeholder {
+    color: darken($font, 30%);
+  }
+  &:focus {
+    box-shadow: 0 0 3pt 2pt rgba(255, 255, 255, .1);
+  }
+}
+textarea.input {
+  padding: 1rem;
+}
+
 .no-select {
   -moz-user-select: none;
   -webkit-user-select: none;

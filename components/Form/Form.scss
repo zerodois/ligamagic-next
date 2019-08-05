@@ -8,6 +8,12 @@
   > *:not(:last-child) {
     margin-right: 1rem;
   }
+  &__input {
+    height: 40vh;
+  }
+  &__row {
+    margin-bottom: .5rem;
+  }
   .header {
     padding: 1rem 0;
     justify-content: flex-start;

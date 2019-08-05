@@ -23,14 +23,20 @@ const Form = ({ onSubmit }) => {
           <img src="/static/liga.svg" alt="logo Ligamagic"/>
           <h1 className="header__title">Ligamagic Next</h1>
         </header>
-        <Input
-          className="text-area"
-          type="textarea"
-          placeholder="Lista de cartas"
-          onChange={list => setForm({ ...form, list })}
-        />
-        <div style={{ marginTop: '.5rem' }}>
-          <Input bottom='separadas por ;' onChange={free => setForm({ ...form, free})} placeholder="Lojas com frete gratuito"/>
+        <div className="form__row">
+          <textarea
+            onChange={list => setForm({ ...form, list })}
+            placeholder="Lista de cartas"
+            className="form__input input no-resize"
+          />
+        </div>
+        <div className="form__row">
+          <input
+            className="input"
+            bottom='separadas por ;'
+            onChange={free => setForm({ ...form, free})}
+            placeholder="Lojas com frete gratuito"
+          />
         </div>
         <div className="flex status" style={{ flexWrap: 'wrap' }}>
           {status.map(item => (
@@ -45,7 +51,7 @@ const Form = ({ onSubmit }) => {
         </div>
         <div className="submit">
           <button
-            className="button button--primary text--bold text--uppercase pointer"
+            className="button button--primary text--bold pointer"
             onClick={_ => onSubmit(form)}
           >
             Estimar preço
