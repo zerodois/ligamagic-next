@@ -2,6 +2,8 @@ import 'isomorphic-fetch';
 const { API_URL } = process.env;
 const request = {};
 
+console.log('ENV VAR', API_URL, process.env);
+
 const getRequestData = (method, data) => {
   if (/get|head/.test(method)) {
     return { qs: data };
