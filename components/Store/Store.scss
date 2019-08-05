@@ -1,9 +1,8 @@
 @import '../../sass/variables';
 
 .store {
-  padding: 2rem 2rem 1rem;
+  padding: 2rem 0 1rem;
   border-radius: 5px;
-  width: 50vw;
   $trans: .25s linear;
   .collapse--button {
     margin-top: .5rem;

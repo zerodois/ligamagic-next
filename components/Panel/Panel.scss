@@ -1,26 +1,23 @@
+@import '../../sass/variables';
+
 .panel {
   margin: 0;
   padding: 0 2rem 2rem;
+  width: 50vw;
+  color: $font;
   &__result {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    &__price {
-      background-color: white;
+    &__title {
       margin-bottom: 1rem;
       border-radius: 200px;
-      box-shadow: 0 0 10px 0 var(--shadow);
       padding: .5rem 0;
-      &__description {
-        border-right: thin solid #eee;
-        padding: .5rem .5rem .5rem 1.5rem;
-        margin-right: .5rem;
-        i {
-          margin-right: .5rem;
-        }
+      &__header {
+        font-size: 1.25rem;
+        font-weight: 500;
       }
-    }
-    &__filter {
-      margin-top: .5rem;
+      &__price {
+      }
     }
   }
 }

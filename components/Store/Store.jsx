@@ -6,7 +6,7 @@ import Card from '../Card/Card';
 
 const calculate = arr => 10 + arr.reduce((prev, curr) => prev + curr.price, 0);
 
-const Store = ({ item, onCardClick, onPurchase }) => {
+const Store = ({ item, onCardClick }) => {
   const [sum, setSum] = useState(calculate(item.cards));
   const [expanded, setExpanded] = useState(true);
   const icon = !expanded ? 'icon--minimized' : '';

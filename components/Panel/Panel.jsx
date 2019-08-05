@@ -10,12 +10,11 @@ const Panel = ({ result, onCardClick, onPurchase }) => {
   return (
     <div className="panel">
       <div className="panel__result">
-        <div className="text--uppercase panel__result__price flex flex-center">
-          <div className="panel__result__price__description flex">
-            <i className="material-icons text--primary">monetization_on</i>
-            <span className="text--primary">Custo estimado</span>
+        <div className="panel__result__title flex flex-center">
+          <h1 className="panel__result__title__header flex-1">R$ {formatPrice(result.estimatedCost)} Reais</h1>
+          <div>
+            <button className="button button--primary">Comprar</button>
           </div>
-          <span className="flex-1">R$ {formatPrice(result.estimatedCost)} reais</span>
         </div>
       </div>
       <div>

@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Product+Sans:100');
 @import '_variables';
 
-$types: 'primary', 'danger';
+$types: ('success': $success, 'danger': $danger, 'primary': $primary);
 
 html, body {
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: $primary;
+  background-color: $bg;
 }
 .link {
   text-decoration: none;
@@ -71,16 +71,13 @@ html, body {
   border: 0;
   display: inline-block;
   text-decoration: none;
-  background: transparent;
-  color: var(--color, #333);
-  padding: .75rem .25rem;
-  border-radius: 4px;
+  background: #ccc;
+  color: $font;
+  padding: .45rem .75rem;
   font-weight: 500;
-  outline: none;
+  border-radius: 4px;
   flex: 1;
-  font-size: 1.01rem;
   font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
   &--full {
     width: 100%;
   }
@@ -89,10 +86,9 @@ html, body {
     border-radius: 200px;
     color: var(--font);
   }
-  @each $type in $types {
+  @each $type, $color in $types {
     &--#{$type} {
-      --color: var(--#{$type});
-      --font: white;
+      background: $color;
     }
   }
 }
