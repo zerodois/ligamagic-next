@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Input from '../Input/Input';
 import './Form.scss';
 import Badge from '../Badge/Badge';
 import { status } from '../../utils';
@@ -11,14 +10,14 @@ const initialState = {
 };
 
 const states = status
-  .reduce((p, c) => ({ ...p, [c.id]: true }), {});
+  .reduce((p, c, index) => ({ ...p, [c.id]: index < 3 }), {});
 
 const Form = ({ onSubmit }) => {
   const [form, setForm] = useState({ ...initialState });
   const [filter, setFilter] = useState({ ...states });
   return (
     <div className="form flex">
-      <div>
+      <div className="form__container">
         <header className="header flex">
           <img src="/static/liga.svg" alt="logo Ligamagic"/>
           <h1 className="header__title">Ligamagic Next</h1>
@@ -38,7 +37,7 @@ const Form = ({ onSubmit }) => {
             placeholder="Lojas com frete gratuito"
           />
         </div>
-        <div className="flex status" style={{ flexWrap: 'wrap' }}>
+        <div className="form__row flex status" style={{ flexWrap: 'wrap' }}>
           {status.map(item => (
             <Badge
               onClick={id => setFilter({ ...filter, [id]: !filter[id] })}
@@ -51,7 +50,7 @@ const Form = ({ onSubmit }) => {
         </div>
         <div className="submit">
           <button
-            className="button button--primary text--bold pointer"
+            className="button button--primary text--bold"
             onClick={_ => onSubmit(form)}
           >
             Estimar preço

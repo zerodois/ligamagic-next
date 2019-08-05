@@ -4,6 +4,9 @@
   // background-color: white;
   // box-shadow: 0px 0 20px 0 #ddd;
   // box-sizing: border-box;
+  &__container {
+    width: 30vw;
+  }
   padding: 0 1rem;
   > *:not(:last-child) {
     margin-right: 1rem;
@@ -39,12 +42,8 @@
     margin-bottom: 1rem;
   }
   .status {
-    max-width: 31vw;
     > * {
       margin: 0 .25rem .25rem 0;
     }
-  }
-  div.submit {
-    text-align: right;
   }
 }
