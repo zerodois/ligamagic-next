@@ -1,6 +1,5 @@
 import 'isomorphic-fetch';
-import { formatUrl } from '../utils';
-const API_URL = 'http://localhost:8080';
+const { API_URL } = process.env;
 const request = {};
 
 const getRequestData = (method, data) => {
