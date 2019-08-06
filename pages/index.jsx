@@ -4,28 +4,46 @@ import dynamic from 'next/dynamic';
 import { Animated } from 'react-animated-css';
 import Form from '../components/Form/Form';
 import Header from '../components/header';
+import Panel from '../components/Panel/Panel';
 import { search, format } from '../services/search';
+import { calculate } from '../services/best';
 
 const Loading = dynamic(() => import('../components/Loading'), { ssr: false });
+
+const formatInt = (number, zeros) => `${'0'.repeat(zeros)}${number}`.substr(-2);
 
 const Index = () => {
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
   const [cards, setCards] = useState([]);
+  const [best, setBest] = useState(null);
+
+  const process = async (cards, options) => {
+    const res = await calculate({ cards, options });
+    await new Promise(r => setTimeout(r, 1000))
+    console.log('RESPONSE:', res);
+    setBest(res);
+    setLoading(false);
+  };
 
   const searchItems = async (form) => {
     const request = format(form);
-    setLoading(true);
     setTotal(request.cards.length);
+    setLoading(true);
     const cards = [];
     for (const card of request.cards) {
       const found = await search({ card, filters: request.filters });
       cards.push(found);
       setCards([...cards]);
     }
+    await process(cards, request.options);
+    setLoading(false);
   };
 
   const perc = parseFloat((cards.length / total) * 100).toFixed(2);
+  const loadingText = perc === 100.00
+    ? `Buscando cartas em estoque ${formatInt(cards.length, 2)}/${formatInt(total, 2)} ${perc} ${perc == 100.00}`
+    : 'Calculando melhor compra';
 
   return (
     <main className="board flex flex-1 flex-center">
@@ -35,11 +53,20 @@ const Index = () => {
           <Loading
             progress={perc}
             show={loading}
-            text={`Buscando cartas em estoque ${cards.length}/${total}`}
+            text={loadingText}
           />
         </Animated>
       </div>
-      <Animated animationIn="bounceInRight" animationOut="bounceOutRight" isVisible={!loading}>
+      <div className="fixed" style={{ zIndex: 0 }}>
+        <Animated animationIn="bounceInUp" animationOut="bounceOutUp" isVisible={best}>
+          <div className="board__res flex">
+            <Panel
+              result={best}
+            />
+          </div>
+        </Animated>
+      </div>
+      <Animated animationIn="bounceInRight" animationOut="bounceOutRight" isVisible={!loading && !best}>
         <Form
           onSubmit={searchItems}
         />

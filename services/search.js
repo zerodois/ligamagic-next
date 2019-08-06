@@ -7,7 +7,7 @@ export const format = (form) => {
     .split('\n')
     .filter(line => line.trim());
   const options = {
-    'free-shipping': form.free.split(';').map(item => item.trim()).filter(item => item),
+    'free_shipping': form.free.split(';').map(item => item.trim()).filter(item => item),
   };
   const filters = {
     excludes: form.ban.split(';').filter(item => item)
@@ -21,12 +21,6 @@ export const format = (form) => {
     return { required: Number(number), name };
   });
   return { cards, options, filters };
-};
-
-export const best = async (form) => {
-  const request = format(form);
-  return api.post('/best', request)
-    .then(json => cleanJson(json, 1));
 };
 
 export const search = async ({ card, filters = {} }) => {
