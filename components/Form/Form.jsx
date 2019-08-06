@@ -19,8 +19,8 @@ const Form = ({ onSubmit }) => {
     <div className="form flex">
       <div className="form__container">
         <header className="header flex">
-          <img src="/static/liga.svg" alt="logo Ligamagic"/>
-          <h1 className="header__title">Ligamagic Next</h1>
+          <img src="/static/logo.svg" alt="logo Magic Next"/>
+          <h1 className="header__title">Magic Next</h1>
         </header>
         <div className="form__row">
           <textarea
