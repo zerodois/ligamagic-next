@@ -1,0 +1,170 @@
+@import '../../sass/variables';
+
+.animated {
+}
+.loading {
+  background-color: $bg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  color: $font-secondary;
+
+  // SET-UP
+  // $col-1: #F44336;
+  // $col-2: #E91E63;
+  // $col-3: #9C27B0;
+  // $col-4: #673AB7;
+  // $col-5: #3F51B5;
+  // $col-6: #2196F3;
+  $col-1: $font-secondary;
+  $col-2: $font-secondary;
+  $col-3: $font-secondary;
+  $col-4: $font-secondary;
+  $col-5: $font-secondary;
+  $col-6: $font-secondary;
+  $size: 1rem;
+  $dot-size: .25rem;
+
+  .progress {
+    width: 100%;
+    height: .75rem;
+    margin: 3rem 0 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid $font;
+    border-radius: 50px;
+    opacity: .75;
+    &__bar {
+      border-radius: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: $font;
+      width: var(--progress, 0);
+      display: block;
+    }
+  }
+
+  // CENTERING OUR FACES
+  .dice {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: center;
+  }
+
+  // OUR DICE FACES
+  .face {
+    justify-content: space-between;
+    display: flex;
+    width: $size;
+    height: $size;
+    margin: 0 .35rem;
+    padding: .5rem;
+    border-radius: 5px;
+    .dot {
+      width: $dot-size;
+      height: $dot-size;
+      background: $col-1;
+      border-radius: 50% ;
+    }
+    &:nth-child(1) {
+      border: 2px solid $col-1;
+      animation: waves 2s linear infinite;
+      .dot {
+        background: $col-1;
+      }
+    }
+    &:nth-child(2) {
+      border: 2px solid $col-2;
+      animation: waves 2s .2s linear infinite;
+      .dot { background: $col-2; }
+    }
+    &:nth-child(3) {
+      border: 2px solid $col-3;
+      animation: waves 2s .4s linear infinite;
+      .dot { background: $col-3; }
+    }
+    &:nth-child(4) {
+      border: 2px solid $col-4;
+      animation: waves 2s .6s linear infinite;
+      .dot { background: $col-4; }
+    }
+    &:nth-child(5) {
+      border: 2px solid $col-5;
+      animation: waves 2s .8s linear infinite;
+      .dot { background: $col-5; }
+    }
+    &:nth-child(6) {
+      border: 2px solid $col-6;
+      animation: waves 2s 1s linear infinite;
+      .dot { background: $col-6; }
+    }
+  }
+  // Vertical centering  
+  .first-face {
+    justify-content: center;
+    align-items: center;
+  }
+
+  // Individual positioning (align-self)
+  .second-face {
+    .dot:last-of-type {
+      align-self: flex-end;
+    }
+  }
+
+  // More individual positioning
+  .third-face {
+    .dot:nth-child(2) {
+      align-self: center;
+    }
+    .dot:last-of-type {
+      align-self: flex-end;
+    }
+  }
+
+  // Nesting flex containers with different flex-direction
+  .fourth-face {
+    .column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  // more nesting  
+  .fifth-face {
+    .column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:nth-child(2) {
+        justify-content: center;
+      }
+    }
+  }
+
+  // Again nesting
+  .sixth-face {
+    .column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  @keyframes waves {
+    0% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(-25px);
+    }
+    25% {
+      transform: translateY(0);
+    }
+  }
+}

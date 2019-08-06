@@ -9,6 +9,7 @@ html, body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: $bg;
+  overflow-x: hidden;
 }
 .link {
   text-decoration: none;
@@ -65,6 +66,13 @@ textarea.input {
 }
 .pointer {
   cursor: pointer;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .text {

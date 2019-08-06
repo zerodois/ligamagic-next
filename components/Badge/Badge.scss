@@ -8,7 +8,7 @@
   color: $font;
   border: thin solid #e0e0e0;
   &:not(&--active) {
-    opacity: .5;
+    opacity: .35;
   }
   // box-shadow: 0 0 10px -1px var(--shadow);
   &--active {
