@@ -1,7 +1,7 @@
 import 'isomorphic-fetch';
 import qs from 'qs';
 
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://ligamagic-api.now.sh'; // 'http://localhost:8080';
 
 const isGet = method => /get|head/i.test(method);
 

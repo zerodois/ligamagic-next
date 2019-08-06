@@ -33,7 +33,7 @@ const Form = ({ onSubmit }) => {
           <input
             className="input"
             bottom='separadas por ;'
-            onChange={free => setForm({ ...form, free})}
+            onChange={e => setForm({ ...form, free: e.target.value })}
             placeholder="Lojas com frete gratuito"
           />
         </div>

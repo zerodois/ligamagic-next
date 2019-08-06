@@ -34,7 +34,7 @@ export const buyUrl = (offer) => `https://www.ligamagic.com.br/b/?p=e${offer}`;
  * @param {number} price
  * @returns {string}
  */
-export const formatPrice = (price) => parseFloat(price)
+export const formatPrice = (price) => parseFloat(price / 100)
   .toFixed(2)
   .replace('.', ',');
 

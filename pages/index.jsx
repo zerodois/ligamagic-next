@@ -41,8 +41,8 @@ const Index = () => {
   };
 
   const perc = parseFloat((cards.length / total) * 100).toFixed(2);
-  const loadingText = perc === 100.00
-    ? `Buscando cartas em estoque ${formatInt(cards.length, 2)}/${formatInt(total, 2)} ${perc} ${perc == 100.00}`
+  const loadingText = perc !== '100.00'
+    ? `Buscando cartas em estoque ${formatInt(cards.length, 2)}/${formatInt(total, 2)}`
     : 'Calculando melhor compra';
 
   return (

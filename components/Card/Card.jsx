@@ -1,5 +1,5 @@
 import './Card.scss'
-import { buyUrl, formatPrice } from '../../utils';
+import { formatPrice } from '../../utils';
 
 const Card = (props) => {
   const { card, onClick = null } = props;
@@ -12,7 +12,7 @@ const Card = (props) => {
   return (
     <li className="card flex pointer" onClick={_ => onClick(card)}>
       <span className="flex-1">{name}</span>
-      <span className="text--bold">R$ {parseFloat(price).toFixed(2).replace('.', ',')}</span>
+      <span className="text--bold">R$ {formatPrice(price)}</span>
       <span className="card__status">{card.status.id}</span>
     </li>
   );
