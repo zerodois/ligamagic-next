@@ -3,7 +3,7 @@ import qs from 'qs';
 
 const API_URL = 'http://localhost:8080';
 
-const isGet = method => /get|head/.test(method);
+const isGet = method => /get|head/i.test(method);
 
 const getRequestData = (method, data) => {
   if (isGet(method)) {
