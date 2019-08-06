@@ -2,7 +2,6 @@ import 'isomorphic-fetch';
 import qs from 'qs';
 
 const API_URL = 'http://localhost:8080';
-const request = {};
 
 const isGet = method => /get|head/.test(method);
 
@@ -34,8 +33,11 @@ const factory = (method) => (url, data = {}) => {
     })
 };
 
-['get', 'post', 'put', 'del'].forEach((method) => {
-  request[method] = factory(method);
-});
+const request = {
+  get: factory('GET'),
+  post: factory('POST'),
+  put: factory('PUT'),
+  del: factory('DELETE'),
+};
 
 export default Object.freeze(request);
