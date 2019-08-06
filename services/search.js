@@ -1,7 +1,7 @@
 import api from './api';
 import { cleanJson } from '../utils';
 
-export const best = async (form) => {
+export const format = (form) => {
   const lines = form.list
     .trim('')
     .split('\n')
@@ -20,8 +20,16 @@ export const best = async (form) => {
     const [, number, name] = /^(\d{1,2})\s(.+)$/.exec(line);
     return { required: Number(number), name };
   });
-  const request = { cards, options, filters };
-  console.log('Request:', request);
+  return { cards, options, filters };
+};
+
+export const best = async (form) => {
+  const request = format(form);
   return api.post('/best', request)
+    .then(json => cleanJson(json, 1));
+};
+
+export const search = async ({ card, filters = {} }) => {
+  return api.get('/cards', { name: card.name, ...filters })
     .then(json => cleanJson(json, 1));
 };

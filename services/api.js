@@ -1,20 +1,24 @@
 import 'isomorphic-fetch';
-const { API_URL } = process.env;
+import qs from 'qs';
+
+const API_URL = 'http://localhost:8080';
 const request = {};
 
-console.log('ENV VAR', API_URL, process.env);
+const isGet = method => /get|head/.test(method);
 
 const getRequestData = (method, data) => {
-  if (/get|head/.test(method)) {
-    return { qs: data };
+  if (isGet(method)) {
+    return {};
   }
   return { body: JSON.stringify(data) };
 };
 
-const factory = (method) => (url, data) => {
+const factory = (method) => (url, data = {}) => {
   const uri = url;
   const reqData = getRequestData(method, data);
-  const promise = fetch(`${API_URL}${uri}`, {
+  const dataQs = data.qs || (isGet(method) ? data : {})
+  const query = qs.stringify(dataQs);
+  const promise = fetch(`${API_URL}${uri}?${query}`, {
     method,
     headers: {
       'Content-Type': 'application/json',

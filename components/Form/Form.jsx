@@ -24,7 +24,7 @@ const Form = ({ onSubmit }) => {
         </header>
         <div className="form__row">
           <textarea
-            onChange={list => setForm({ ...form, list })}
+            onChange={e => setForm({ ...form, list: e.target.value })}
             placeholder="Lista de cartas"
             className="form__input input no-resize"
           />
