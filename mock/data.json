@@ -1,0 +1,57 @@
+{
+  "best": 2200,
+  "stores": [
+    {
+      "store": {
+        "name": "Pharaoh",
+        "image": " //www.lmcorp.com.br/arquivos/up/ecom/comparador/155555.jpg"
+      },
+      "cards": [
+        {
+          "name": "Jorro",
+          "image": "//www.lmcorp.com.br/arquivos/up/cartas_bkp/images/en27jvc.jpg",
+          "price": 800,
+          "offer": 4874754,
+          "language": "Português",
+          "edition": "MM",
+          "status": {
+            "id": "HP"
+          },
+          "quantity": 3,
+          "rarity": "Comum",
+          "color": "Azul",
+          "type": "Instant",
+          "mana-cost": "4U",
+          "valid-formats": [
+            "Commander 1x1 (MOL)",
+            "Vintage"
+          ]
+        },
+        {
+          "name": "Juramento de Teferi",
+          "image": "//www.lmcorp.com.br/arquivos/up/cartas_bkp/images/pt200dom.jpg",
+          "price": 400,
+          "offer": 3123580,
+          "language": "Português",
+          "edition": "DOM",
+          "status": {
+            "id": "SP",
+            "name": "Slightly Played"
+          },
+          "quantity": 1,
+          "rarity": "Rara",
+          "color": "Multi Colorida",
+          "type": "Legendary Enchantment",
+          "mana-cost": "3WU",
+          "valid-formats": [
+            "Standard",
+            "Modern",
+            "Legacy",
+            "Brawl",
+            "Commander 1x1 (MOL)"
+          ]
+        }
+      ]
+    }
+  ]
+}

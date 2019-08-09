@@ -13,7 +13,12 @@ export const status = [
 /**
  * @description LigaMagic login page URL
  */
-export const LIGA_URL = 'https://ligamagic.com.br';
+export const LIGA_URL = 'https://www.ligamagic.com.br';
+
+/**
+ * @description Create cart URL
+ */
+export const BUY_URL = `${LIGA_URL}/ajax/cards/compra_lista.php`;
 
 /**
  * Format URL with https://
@@ -32,7 +37,7 @@ export const formatUrl = (url) => {
  * @param {number} offer offer id of card
  * @returns {string}
  */
-export const buyUrl = (offer) => `${LIGA_URL}/b/?p=e${offer}`;
+export const buyUrl = (offer) => `${LIGA_URLa}/b/?p=e${offer}`;
 
 /**
  * Format number to BRL price

@@ -7,6 +7,7 @@ import Header from '../components/header';
 import Panel from '../components/Panel/Panel';
 import { search, format } from '../services/search';
 import { calculate } from '../services/best';
+// import mock from '../mock/data.json';
 
 const Loading = dynamic(() => import('../components/Loading'), { ssr: false });
 
