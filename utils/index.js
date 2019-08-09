@@ -11,6 +11,11 @@ export const status = [
 ];
 
 /**
+ * @description LigaMagic login page URL
+ */
+export const LIGA_URL = 'https://ligamagic.com.br';
+
+/**
  * Format URL with https://
  * @param {string} url url to be formatted
  * @returns {string}
@@ -27,7 +32,7 @@ export const formatUrl = (url) => {
  * @param {number} offer offer id of card
  * @returns {string}
  */
-export const buyUrl = (offer) => `https://www.ligamagic.com.br/b/?p=e${offer}`;
+export const buyUrl = (offer) => `${LIGA_URL}/b/?p=e${offer}`;
 
 /**
  * Format number to BRL price
