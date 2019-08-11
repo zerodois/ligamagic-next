@@ -16,13 +16,11 @@ const formatInt = (number, zeros) => `${'0'.repeat(zeros)}${number}`.substr(-2);
 const Index = () => {
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(0);
   const [best, setBest] = useState(null);
 
   const process = async (cards, options) => {
     const res = await calculate({ cards, options });
-    await new Promise(r => setTimeout(r, 1000))
-    console.log('RESPONSE:', res);
     setBest(res);
     setLoading(false);
   };
@@ -35,13 +33,13 @@ const Index = () => {
     for (const card of request.cards) {
       const found = await search({ card, filters: request.filters });
       cards.push(found);
-      setCards([...cards]);
+      setCards(cards.length);
     }
     await process(cards, request.options);
     setLoading(false);
   };
 
-  const perc = parseFloat((cards.length / total) * 100).toFixed(2);
+  const perc = parseFloat((cards / total) * 100).toFixed(2);
   const loadingText = perc !== '100.00'
     ? `Buscando cartas em estoque ${formatInt(cards.length, 2)}/${formatInt(total, 2)}`
     : 'Calculando melhor compra';
@@ -59,7 +57,7 @@ const Index = () => {
         </Animated>
       </div>
       <div className="fixed" style={{ zIndex: 0 }}>
-        <Animated animationIn="bounceInUp" animationOut="bounceOutUp" isVisible={best}>
+        <Animated animationIn="bounceInUp" animationOut="bounceOutUp" isVisible={!!best}>
           <div className="board__res flex">
             <Panel
               result={best}
