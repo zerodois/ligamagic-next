@@ -10,7 +10,8 @@ export const format = (form) => {
     'free_shipping': form.free.split(';').map(item => item.trim()).filter(item => item),
   };
   const filters = {
-    excludes: form.ban.split(';').filter(item => item)
+    excludes: form.ban.split(';').filter(item => item),
+    status: form.status.join(';'),
   };
   const error = lines.some(line => !/^\d{1,2}\s.+$/.test(line));
   if (error) {

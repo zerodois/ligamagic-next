@@ -10,11 +10,20 @@ const initialState = {
 };
 
 const states = status
-  .reduce((p, c, index) => ({ ...p, [c.id]: index < 3 }), {});
+  .reduce((p, c, index) => ({ ...p, [c.id]: index < 4 }), {});
 
 const Form = ({ onSubmit }) => {
   const [form, setForm] = useState({ ...initialState });
   const [filter, setFilter] = useState({ ...states });
+
+  const submitForm = () => {
+    const formated = { ...form };
+    formated.status = Object.entries(filter)
+      .filter(([, value]) => value)
+      .map(([key]) => key);
+    onSubmit(formated);
+  };
+
   return (
     <div className="form flex">
       <div className="form__container">
@@ -51,7 +60,7 @@ const Form = ({ onSubmit }) => {
         <div className="submit">
           <button
             className="button button--primary text--bold"
-            onClick={_ => onSubmit(form)}
+            onClick={submitForm}
           >
             Estimar preço
           </button>
