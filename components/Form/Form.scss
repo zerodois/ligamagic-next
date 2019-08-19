@@ -17,20 +17,6 @@
   &__row {
     margin-bottom: .5rem;
   }
-  .header {
-    padding: 1rem 0;
-    justify-content: flex-start;
-    align-items: center;
-    &__title {
-      text-transform: uppercase;
-      font-family: 'Product Sans', sans-serif;
-      color: $font;
-    }
-    img {
-      max-width: 3.5vw;
-      margin-right: 1rem;
-    }
-  }
   .row > *:not(:last-child) {
     margin-right: .5rem;
   }
