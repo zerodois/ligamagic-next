@@ -15,8 +15,17 @@ const Login = () => {
           <div className="row">
             <input className="input" type="text" placeholder="Senha"/>
           </div>
+          <div className="row flex spacer pointer">
+            <a className="link text--small">Esqueceu sua senha?</a>
+          </div>
           <div className="row">
             <button className="button button--primary button--full">Entrar</button>
+          </div>
+          <div className="row text--center text--small spacer">
+            Não possui conta?
+            <a className="link pointer text--bold sigup text--small">
+              Criar uma conta
+            </a>
           </div>
         </section>
       </div>
