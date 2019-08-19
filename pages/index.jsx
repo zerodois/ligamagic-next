@@ -3,7 +3,6 @@ import 'isomorphic-fetch'
 import dynamic from 'next/dynamic';
 import { Animated } from 'react-animated-css';
 import Form from '../components/Form/Form';
-import Header from '../components/header';
 import Panel from '../components/Panel/Panel';
 import { search, format } from '../services/search';
 import { calculate } from '../services/best';
@@ -46,7 +45,6 @@ const Index = () => {
 
   return (
     <main className="board flex flex-1 flex-center">
-      <Header />
       <div className="fixed">
         <Animated animationIn="bounceInLeft" animationOut="bounceOutLeft" isVisible={loading}>
           <Loading
