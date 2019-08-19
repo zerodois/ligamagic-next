@@ -10,11 +10,15 @@ const Card = (props) => {
     image,
   } = card;
   return (
-    <li className="card flex pointer" onClick={_ => onClick(card)}>
+    <a
+      href={`https://www.ligamagic.com.br/b/?p=e${offer}`}
+      className="card flex pointer"
+      target="__blank"
+    >
       <span className="flex-1">{name}</span>
       <span className="text--bold">R$ {formatPrice(price)}</span>
       <span className="card__status">{card.status.id}</span>
-    </li>
+    </a>
   );
 };
 
