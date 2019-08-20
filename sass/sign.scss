@@ -1,4 +1,4 @@
-.login {
+.sign {
   .input {
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -11,7 +11,8 @@
   .spacer {
     margin: .75rem 0;
   }
-  .sigup {
+  .signin, .signup {
+    display: inline-block;
     margin-left: .25rem;
   }
 }

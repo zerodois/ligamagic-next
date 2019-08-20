@@ -1,6 +1,7 @@
-import '../sass/login.scss';
+import Link from 'next/link';
+import '../sass/sign.scss';
 
-const Login = () => {
+const SignUp = () => {
   return (
     <main className="flex flex-center page flex-column">
       <div>
@@ -8,7 +9,7 @@ const Login = () => {
           <img src="/static/logo.svg" alt="logo Magic Next"/>
           <h1 className="header__title">Magic Next</h1>
         </header>
-        <section className="login flex flex-column">
+        <section className="sign flex flex-column">
           <div className="row">
             <input className="input" type="text" placeholder="Email"/>
           </div>
@@ -16,16 +17,17 @@ const Login = () => {
             <input className="input" type="text" placeholder="Senha"/>
           </div>
           <div className="row flex spacer pointer">
-            <a className="link text--small">Esqueceu sua senha?</a>
           </div>
           <div className="row">
-            <button className="button button--primary button--full">Entrar</button>
+            <button className="button button--primary button--full">Criar conta</button>
           </div>
           <div className="row text--center text--small spacer">
-            Não possui conta?
-            <a className="link pointer text--bold sigup text--small">
-              Criar uma conta
-            </a>
+            Já tem uma conta?
+            <Link href="/signin">
+              <a className="link pointer text--bold signin text--small">
+                Entrar
+              </a>
+            </Link>
           </div>
         </section>
       </div>
@@ -33,4 +35,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
