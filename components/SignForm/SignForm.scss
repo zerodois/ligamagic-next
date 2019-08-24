@@ -1,0 +1,20 @@
+.sign {
+  .input {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 3px;
+  }
+  .row {
+    padding: 0;
+    margin-bottom: .5rem;
+  }
+  .spacer {
+    margin: .75rem 0;
+  }
+  .signin, .signup {
+    display: inline-block;
+    margin-left: .25rem;
+  }
+  .button i {
+  }
+}

@@ -1,18 +1,12 @@
-.sign {
-  .input {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-    border-radius: 3px;
-  }
-  .row {
-    padding: 0;
-    margin-bottom: .5rem;
-  }
-  .spacer {
-    margin: .75rem 0;
-  }
-  .signin, .signup {
-    display: inline-block;
-    margin-left: .25rem;
+.container {
+  height: 100vh;
+  .feedback-text {
+    max-width: 20vw;
+    font-size: .9rem;
+    line-height: 1.5rem;
+    &--small {
+      line-height: 1.25rem;
+      font-size: .8rem;
+    }
   }
 }
