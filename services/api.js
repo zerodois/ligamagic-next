@@ -27,7 +27,10 @@ const factory = (method) => (url, data = {}) => {
   return promise
     .then(async response => {
       if (response.status >= 400) {
-        throw new Error(await response.text());
+        const resp = await response.json();
+        const error = new Error(resp.message);
+        error.status = response.status;
+        throw error;
       }
       return response.json()
     })

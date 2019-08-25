@@ -11,21 +11,46 @@ const states = {
   INITIAL: 0,
   SUCCESS: 1,
   LOADING: 2,
+  ERROR: 3,
+};
+
+const Error = ({ isVisible, error }) => {
+  if (!isVisible) {
+    return null;
+  }
+  return (
+    <Animated
+      animationIn="fadeIn"
+      animationOut="fadeOut"
+      isVisible={isVisible}
+    >
+      <div className="flash-message flash-message--error text--center">
+        <span>{error}</span>
+      </div>
+    </Animated>
+  );
 };
 
 const SignUp = () => {
   const [state, setState] = useState(states.INITIAL);
-  const visibles = [states.INITIAL, states.LOADING];
+  const [error, setError] = useState('');
+  const visibles = [states.INITIAL, states.LOADING, states.ERROR];
   const formVisible = visibles.includes(state);
 
   const onSubmit = async (data) => {
     try {
       setState(states.LOADING);
       const response = await createUser(data);
-      console.log('api response', data);
+      console.log('api response', response);
       setState(states.SUCCESS);
     } catch (error) {
       console.error(error);
+      setState(states.ERROR);
+      if (error.status === 409) {
+        setError('Este usuário já existe!');
+        return;
+      }
+      setError('Erro ao criar usuário.');
     }
   }
 
@@ -33,7 +58,10 @@ const SignUp = () => {
     <div className="container flex flex-center flex-column">
       <Header />
       {formVisible ? (
-        <Form onSubmit={onSubmit} />
+        <div>
+          <Error isVisible={state === states.ERROR} error={error} />
+          <Form onSubmit={onSubmit} />
+        </div>
       ) : (
         <Animated
           animationIn="fadeIn"
