@@ -2,15 +2,14 @@
 
 .container {
   height: 100vh;
-  $error: lighten($danger, 10%);
   .flash-message {
     border-radius: 5px;
     font-size: .9rem;
     margin-bottom: .5rem;
     padding: .5rem;
     &--error {
-      color: $error;
-      border: thin solid $error;
+      color: $danger;
+      border: thin solid $danger;
     }
   }
   .feedback-text {

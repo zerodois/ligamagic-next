@@ -13,6 +13,6 @@ $bg: #2F3250;
 $neutral: #524F59;
 $primary: #4757FE;
 $success: hsl(141, 71%, 48%);
-$danger: hsl(348, 100%, 61%);
+$danger: lighten(hsl(348, 100%, 61%), 10%);
 $font: white;
 $font-secondary: #86839A;

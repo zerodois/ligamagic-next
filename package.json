@@ -8,6 +8,7 @@
     "@zeit/next-sass": "^1.0.1",
     "animate.css": "^3.7.2",
     "dotenv": "^8.0.0",
+    "formik": "^1.5.8",
     "isomorphic-fetch": "^2.2.1",
     "next": "^8.0.0",
     "node-sass": "^4.11.0",
