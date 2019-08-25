@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Animated } from 'react-animated-css';
 import '../sass/sign.scss';
 import Form from '../components/SignForm/SignForm';
+import Header from '../components/Header/Header';
 import Feedback from '../components/SignForm/Feedback';
 
 import { createUser } from '../services/auth';
@@ -30,10 +31,7 @@ const SignUp = () => {
 
   return (
     <div className="container flex flex-center flex-column">
-      <header className="header flex">
-        <img src="/static/logo.svg" alt="logo Magic Next"/>
-        <h1 className="header__title">Magic Next</h1>
-      </header>
+      <Header />
       {formVisible ? (
         <Form onSubmit={onSubmit} />
       ) : (

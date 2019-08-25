@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Form.scss';
+import Header from '../Header/Header';
 import Badge from '../Badge/Badge';
 import { status } from '../../utils';
 
@@ -27,10 +28,7 @@ const Form = ({ onSubmit }) => {
   return (
     <div className="form flex">
       <div className="form__container">
-        <header className="header flex">
-          <img src="/static/logo.svg" alt="logo Magic Next"/>
-          <h1 className="header__title">Magic Next</h1>
-        </header>
+        <Header />
         <div className="form__row">
           <textarea
             onChange={e => setForm({ ...form, list: e.target.value })}

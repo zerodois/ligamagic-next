@@ -1,14 +1,12 @@
 import Link from 'next/link';
+import Header from '../components/Header/Header';
 import '../sass/sign.scss';
 
 const Login = () => {
   return (
     <main className="flex flex-center page flex-column">
       <div>
-        <header className="header flex">
-          <img src="/static/logo.svg" alt="logo Magic Next"/>
-          <h1 className="header__title">Magic Next</h1>
-        </header>
+        <Header />
         <section className="sign flex flex-column">
           <div className="row">
             <input className="input" type="text" placeholder="Email"/>
