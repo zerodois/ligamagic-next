@@ -13,7 +13,7 @@
     "next": "^8.0.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
-    "qs": "^6.7.0",
+    "qs": "^6.7.3",
     "react": "^16.7.0",
     "react-animated-css": "^1.2.1",
     "react-dom": "^16.7.0",
